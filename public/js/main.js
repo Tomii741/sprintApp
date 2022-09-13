@@ -1,4 +1,4 @@
-import { subscribeToHellfireClub } from "./firebase/hellfire-club.js"
+import { subscribeToHellfireClub } from "./firebase/hellfire-club.js.js"
 
 const txtName = document.getElementById("txtName");
 const txtEmail = document.getElementById("txtEmail");
