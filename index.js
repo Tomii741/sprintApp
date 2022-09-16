@@ -66,8 +66,8 @@ app.post("/", (req, res) => {
 
         conexion.query(sql, datos, (err, result) => {
             if (err) throw err;
-            res.render("/", {
-                title: "Personajes"
+            res.render("postSucces", {
+                title: "Inicio"
             })
         })
 
