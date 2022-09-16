@@ -1,3 +1,19 @@
 <main>
-    <h2>Creadores: ASkjdbakjsdbka</h2>
+    <h2>Lista para Derrotar a Vecna</h2>
+    {{#each results}}
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{ personaje_url }}" class="img-fluid rounded-start" alt="foto de perfil">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ personaje_nombre }}</h5>
+                    <p class="card-text">{{ personaje_character }}.</p>
+                    <p class="card-text"><small class="text-muted">{{ personaje_estado }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </main>

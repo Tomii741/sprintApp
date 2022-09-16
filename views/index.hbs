@@ -1,10 +1,9 @@
-<main>
-    <header aria-label="Cabeçalho da página.">
+<header aria-label="Cabeçalho da página.">
         <audio id="music" autoplay>
-            <source src="/musics/normal-world.mpeg" aria-details="Audio do site" />
+            {{!-- <source src="/musics/normal-world.mpeg" aria-details="Audio do site" /> --}}
         </audio>
         <div class="header-content">
-            <img class="invert-element" src="/images/banner/logo.svg"
+            <img class="invert-element" src="/images/banner/logo-2.png"
                 alt="Imagem principal Mundo Invertido. Semana Frontend DIO." />
             <p class="invert-element" role="text">
                 Una Jornada para quien no le tiene miedo a lo desconocido. El camino para el Upside Down es incierto,
@@ -16,7 +15,8 @@
         </div>
 
         <div id="top-characters" class="world-characters"></div>
-    </header>
+</header>
+<main>
     <div id="bottom-characters" class="world-characters"></div>
 
     <section id="section-inverted-world" class="container">
@@ -54,49 +54,50 @@
         <div class="container section-text">
             <h2>La segunda serie mas vista de Netflix</h2>
             <ul class="gallery-container" role="gallery">
-                <li class="gallery-image invert-element">
-                    <img src="/images/content/serie-image-01.png" alt="Imagem de Vecna" />
-                </li>
-                <li class="gallery-image invert-element">
-                    <img src="/images/content/serie-image-02.png" alt="Imagem ilustrativa dos amigos de Eleven" />
-                </li>
-                <li class="gallery-image invert-element">
-                    <img src="/images/content/serie-image-03.png" alt="Imagem Eleven assustada" />
-                </li>
+                {{#each personajes}}
+                    <li class="gallery-image invert-element">
+                        <img src="/images/content/serie-image-{{this.numPic}}.png" alt="{{this.picDesc}}" />
+                    </li>
+                {{/each}}
             </ul>
         </div>
     </section>
 
     <section id="section-form" class="container">
-        <h2>El Club Dungeons & Dragons</h2>
+        <h2>El Club Hellfire</h2>
         <p>
             Para detener a Vecna, los héroes de Stranger Things también necesitan
-            vos. El Club D&D más famoso de Hawkings está abierto
+            vos. El Club Hellfire más famoso de Hawkings está abierto
             para tu próxima aventura. Si no tienes miedo, te gustan los retos y
             no tiene miedo de correr el D20, es hora de registrarse para hacer
             parte de la nueva campaña.
         </p>
 
         <div class="form-content">
-            <h3>Únete al club D&D y experimenta <span>otro mundo<span></span></h3>
+            <h3>Únete al club Hellfire y experimenta <span>otro mundo<span></span></h3>
 
             <div class="form-container">
-                <form>
-                    <label for="name">Nombre Completo</label>
-                    <input type="text" name="name" id="txtName">
+                <form action="/" method="post">
+                    <label for="txtName">Nombre Completo</label>
+                    <input type="text" name="txtName" id="txtName">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="txtEmail">
+                    <label for="txtEstado">Estado</label>
+                    <input type="text" name="txtEstado" id="txtEstado">
 
-                    <label for="level">Level</label>
-                    <input type="number" name="level" id="txtLevel">
+                    <label for="txtUrl">Foto</label>
+                    <input type="text" name="txtUrl" id="txtUrl">
 
-                    <label for="character">Personaje</label>
-                    <textarea name="character" cols="30" rows="10" id="txtCharacter"></textarea>
+                    <label for="txtCharacter">Descripcion</label>
+                    <textarea name="txtCharacter" cols="30" rows="10" id="txtCharacter"></textarea>
 
-                    <button type="button" id="btnSubscribe">Unirme</button>
+                    <button type="submit" id="btnSubscribe">Unirme</button>
                 </form>
 
+                <div class="text-center">
+                <h2 class="text-danger">
+                    {{ validacion }}
+                </h2>
+            </div>
             </div>
         </div>
     </section>
