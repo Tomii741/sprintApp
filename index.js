@@ -16,20 +16,20 @@ app.set("views", path.join(__dirname, "views"));
 hbs.registerPartials(path.join(__dirname, "views/partials"));
 
 // Conexion a la Base de Datos
-const conexion = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
-})
+// const conexion = mysql.createConnection({
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     password: process.env.PASSWORD,
+//     database: process.env.DATABASE
+// })
 
-conexion.connect((err) => {
-    if (err) {
-        console.error(`Error en el la conexion: ${err.stack}`);
-        return;
-    }
-    console.log(`Conectado a la base de datos ${process.env.DATABASE}`);
-})
+// conexion.connect((err) => {
+//     if (err) {
+//         console.error(`Error en el la conexion: ${err.stack}`);
+//         return;
+//     }
+//     console.log(`Conectado a la base de datos ${process.env.DATABASE}`);
+// })
 
 app.get("/",(req, res) => {
     res.render("index", {
@@ -45,51 +45,54 @@ app.get("/",(req, res) => {
 
 app.post("/", (req, res) => {
     const {txtName, txtEstado, txtCharacter, txtUrl} = req.body;
-    console.log(txtName, txtEstado, txtCharacter, txtUrl);
+    // console.log(txtName, txtEstado, txtCharacter, txtUrl);
     if(txtName == "" || txtEstado == "" || txtCharacter == "" || txtUrl == "" ) {
 
         res.render("/", {
             title: "Inicio",
             validacion,
         })
-    } else {
-        let datos = {
-            /*nombre de la columna en la tabla: nombre del id */ 
-            personaje_nombre: txtName,
-            personaje_estado: txtEstado,
-            personaje_url: txtUrl,
-            personaje_character: txtCharacter
+    } //else {
+    //     let datos = {
+    //         /*nombre de la columna en la tabla: nombre del id */ 
+    //         personaje_nombre: txtName,
+    //         personaje_estado: txtEstado,
+    //         personaje_url: txtUrl,
+    //         personaje_character: txtCharacter
 
-        };
+    //     };
 
-        let sql = "INSERT INTO personajes SET ?"
+    //     let sql = "INSERT INTO personajes SET ?"
 
-        conexion.query(sql, datos, (err, result) => {
-            if (err) throw err;
-            res.render("postSucces", {
-                title: "Inicio"
-            })
-        })
+    //     conexion.query(sql, datos, (err, result) => {
+    //         if (err) throw err;
+    //         res.render("postSucces", {
+    //             title: "Inicio"
+    //         })
+    //     })
 
-    }
-})
+    // }
+});
 
 
 app.get("/creadores", (req, res) => {
-    let sql = "SELECT * FROM personajes";
+    // let sql = "SELECT * FROM personajes";
 
-    conexion.query(sql, (err, result) => {
-        if(err) throw err;
-        res.render("creadores", {
-            title: "Creadores",
-            results: result
+    // conexion.query(sql, (err, result) => {
+    //     if(err) throw err;
+    //     res.render("creadores", {
+    //         title: "Creadores",
+    //         results: result
+    //     })
+    // })
+    res.render("creadores", {
+        title: "Creadores",
         })
-    })
 })
 
 
 app.listen(PORT, () => {
-    console.log(`Servidor Funcionando en el puerto ${PORT}`);
+    //console.log(`Servidor Funcionando en el puerto ${PORT}`);
 });
 
 
