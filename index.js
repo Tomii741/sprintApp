@@ -48,6 +48,7 @@ app.post("/", (req, res) => {
     // console.log(txtName, txtEstado, txtCharacter, txtUrl);
     if(txtName == "" || txtEstado == "" || txtCharacter == "" || txtUrl == "" ) {
 
+        let validacion ="Rellene los campos correctamente";
         res.render("/", {
             title: "Inicio",
             validacion,
