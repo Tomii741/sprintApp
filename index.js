@@ -49,11 +49,11 @@ app.post("/", (req, res) => {
     if(txtName == "" || txtEstado == "" || txtCharacter == "" || txtUrl == "" ) {
 
         let validacion ="Rellene los campos correctamente";
-        res.render("/", {
+        res.render("index", {
             title: "Inicio",
             validacion,
         })
-    } //else {
+    } else {
     //     let datos = {
     //         /*nombre de la columna en la tabla: nombre del id */ 
     //         personaje_nombre: txtName,
@@ -71,8 +71,10 @@ app.post("/", (req, res) => {
     //             title: "Inicio"
     //         })
     //     })
-
-    // }
+    res.render("postSucces", {
+        title: "Inicio"
+        })
+    }
 });
 
 
