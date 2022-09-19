@@ -1,3 +1,3 @@
 
 Proyecto PWA TT UTN - SprintApp
-# Integrantes: 
+# Integrantes: Tomas Adrian Lopez, Juan Hinojosa, Joaquin Vega
