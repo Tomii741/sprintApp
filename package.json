@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start" : "node index.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "dotenv": "^16.0.2",
@@ -9,5 +9,11 @@
     "mysql2": "^2.3.3",
     "nodemailer": "^6.7.8",
     "path": "^0.12.7"
-  }
+  },
+  "name": "stranger-things",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Tomii741/stranger-things.git",
+  "author": "Tomi <tombino1214@gmail.com>",
+  "license": "MIT"
 }
