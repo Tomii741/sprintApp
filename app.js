@@ -31,11 +31,6 @@ hbs.registerPartials(path.join(__dirname, "src/views/partials"));
 //Rutas
 app.use(router);
 
-app.get("/", (req, res) => {
-    res.send(`<h1> Bienvenidos a mi App con ES6</h1>`)
-})
-
-
 //creacion del puerto
 app.listen(PORT, () => {
     console.log(`Aplicacion con Yarn y ES6 corriendo en el puerto ${PORT}`);

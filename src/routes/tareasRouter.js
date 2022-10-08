@@ -1,6 +1,8 @@
 import { Router } from "express";
 import {
     home,
+    agregarCreador,
+    //dameCreadores
     // dameTareas,
     // tareasId,
     // agregarTareas,
@@ -11,8 +13,9 @@ import {
 
 export const router = Router();
 
-router.get("/", home);
-
+router.get('/', home);
+router.post('/addCreadores', agregarCreador);
+//router.get('/creador', dameCreadores);
 // router.get("/tareas", dameTareas);
 // router.get("/tareas/:id", tareasId);
 // router.post("/addTareas", agregarTareas);
