@@ -1,11 +1,11 @@
 import mongodb from "mongodb";
 import "dotenv/config";
 
-const MongoClient = mongodb.MongoClient;
+const mongoClient = mongodb.MongoClient;
 const MONGOLOCAL = process.env.MONGOLOCAL;
 
 try {
-    MongoClient.connect(MONGOLOCAL, {
+    mongoClient.connect(MONGOLOCAL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     });

@@ -1,6 +1,6 @@
 import "dotenv/config";
 import mongodb from "mongodb";
-const MongoClient = mongodb.MongoClient;
+const mongoClient = mongodb.MongoClient;
 
 export const home = (req, res) => {
     res.render("home")
