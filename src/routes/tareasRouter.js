@@ -3,7 +3,9 @@ import {
     home,
     creadores,
     datoGuardado,
-    eliminarUser
+    eliminarUser,
+    editar,
+    editPost
     // tareasId,
     // agregarTareas,
     // editarTarea,
@@ -15,7 +17,9 @@ export const router = Router();
 
 router.get("/", home);
 router.get("/creadores", creadores);
+router.get("/editar/:id", editar)
 router.post("/postSucces", datoGuardado);
+router.put("/update/:id", editPost)
 router.delete("/eliminar/:id", eliminarUser)
 
 // router.post("/postSucces", datoGuardado);
