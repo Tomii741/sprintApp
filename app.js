@@ -36,14 +36,7 @@ app.use(router);
 // })
 
 app.get("/",(req, res) => {
-    res.render("home", {
-        personajes:[
-            {numPic: "01", picDesc: "Imagen de Vecna"},
-            {numPic: "02", picDesc: "Imagem ilustrativa de los amigos de Eleven"},
-            {numPic: "03", picDesc: "Imagen Eleven asustada"}
-        ]
-    })
-    
+    res.render("home")
 });
 
 //creacion del puerto

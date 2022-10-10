@@ -1,9 +1,15 @@
 import "dotenv/config";
 import mongodb from "mongodb";
-const mongoClient = mongodb.MongoClient;
+const MongoClient = mongodb.MongoClient;
 
 export const home = (req, res) => {
-    res.render("home")
+    res.render("home", {
+        personajes:[
+            {numPic: "01", picDesc: "Imagen de Vecna"},
+            {numPic: "02", picDesc: "Imagem ilustrativa de los amigos de Eleven"},
+            {numPic: "03", picDesc: "Imagen Eleven asustada"}
+        ]
+    })
 }
 
 
@@ -52,6 +58,28 @@ export const creadores = (req, res) => {
     });
 }
 
+export const eliminarUser = (req, res) => {
+    MongoClient.connect(process.env.MONGOLOCAL, (error,db) =>{
+        const database = db.db(process.env.DATABASE)
+
+        if (error) {
+            console.log("Error en la conexion");
+        } else {
+            const id = req.params.id;
+            const ObjectId = mongodb.ObjectId
+
+            database.collection("userStrangerThings").deleteOne({_id: ObjectId(id)}, (error, result) => {
+                if (error) {
+                    console.log("Error en la conexion");
+                } else {
+                    console.log("Documento eliminado");
+                    res.json(result);
+                }
+            })
+
+        }
+    });
+}
 // export const datoGuardado = (req, res) => {
 //     res.render("postSucces")
 // }

@@ -1,6 +1,6 @@
 <main>
     <h2>Lista para Derrotar a Vecna</h2>
-    {{#each result}}
+    {{!-- {{#each result}}
     <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
             <div class="col-md-4">
@@ -13,6 +13,17 @@
                     <p class="card-text"><small class="text-muted">{{ txtEstado }}</small></p>
                 </div>
             </div>
+        </div>
+    </div>
+    {{/each}} --}}
+    {{#each result}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ txtName }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ txtEstado}}</h6>
+            <p class="card-text">{{ txtEstado}}.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
         </div>
     </div>
     {{/each}}
