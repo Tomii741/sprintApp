@@ -80,27 +80,21 @@
             <h3 data-aos="fade-right">Únete al club Hellfire y experimenta <span>otro mundo<span></span></h3>
 
             <div class="form-container" data-aos="fade-up">
-                <form action="/" method="post">
+                <form action="/postSucces" method="post">
                     <label for="txtName">Nombre Completo</label>
                     <input type="text" name="txtName" id="txtName">
 
                     <label for="txtEstado">Estado</label>
                     <input type="text" name="txtEstado" id="txtEstado">
 
-                    <label for="txtUrl">Foto</label>
-                    <input type="text" name="txtUrl" id="txtUrl">
+                    {{!-- <label for="txtUrl">Foto</label>
+                    <input type="text" name="txtUrl" id="txtUrl"> --}}
 
                     <label for="txtCharacter">Descripcion</label>
                     <textarea name="txtCharacter" cols="30" rows="10" id="txtCharacter"></textarea>
 
                     <button type="submit" id="btnSubscribe">Unirme</button>
                 </form>
-
-                <div class="text-center">
-                <h2 class="text-danger">
-                    {{ validacion }}
-                </h2>
-            </div>
             </div>
         </div>
     </section>

@@ -31,10 +31,20 @@ hbs.registerPartials(path.join(__dirname, "src/views/partials"));
 //Rutas
 app.use(router);
 
-app.get("/", (req, res) => {
-    res.send(`<h1> Bienvenidos a mi App con ES6</h1>`)
-})
+// app.get("/", (req, res) => {
+//     res.send("Test de programa")
+// })
 
+app.get("/",(req, res) => {
+    res.render("home", {
+        personajes:[
+            {numPic: "01", picDesc: "Imagen de Vecna"},
+            {numPic: "02", picDesc: "Imagem ilustrativa de los amigos de Eleven"},
+            {numPic: "03", picDesc: "Imagen Eleven asustada"}
+        ]
+    })
+    
+});
 
 //creacion del puerto
 app.listen(PORT, () => {
