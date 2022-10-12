@@ -58,28 +58,6 @@ export const creadores = (req, res) => {
     });
 }
 
-export const eliminarUser = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error,db) =>{
-        const database = db.db(process.env.DATABASE)
-
-        if (error) {
-            console.log("Error en la conexion");
-        } else {
-            const id = req.params.id;
-            const ObjectId = mongodb.ObjectId
-
-            database.collection("userStrangerThings").deleteOne({_id: ObjectId(id)}, (error, result) => {
-                if (error) {
-                    console.log("Error en la conexion");
-                } else {
-                    console.log("Documento eliminado");
-                    res.json(result);
-                }
-            })
-
-        }
-    });
-}
 export const editar = (req, res) => {
     MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
         const database = db.db(process.env.DATABASE)
@@ -123,6 +101,55 @@ export const editPost = (req, res) => {
                 error? console.log(error.message) : database.collection('userStrangerThings').replaceOne({_id: ObjectId(id)},{txtName, txtEstado, /*txtUrl ,*/ txtCharacter}, )
                 //console.log(req.body)
                 res.redirect('/')
+            })
+
+        }
+    });
+}
+
+export const eliminarUser = (req, res) => {
+    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+        const database = db.db(process.env.DATABASE)
+        if (error) {
+            console.log(`No estamos conectados a la Database`);
+        }else{
+            console.log(`Conexion correcta a la Database`);
+
+            let ObjectId = mongodb.ObjectId;
+            let id = req.params.id;
+
+            database.collection('userStrangerThings').findOne({_id: ObjectId(id)}, (error, result) =>{
+                if (error) {
+                    throw error;
+                }else{
+                    res.render('eliminar', { 
+                        result
+                    })
+                }
+            })
+        }
+    });
+}
+
+
+export const eliminado = (req, res) => {
+    MongoClient.connect(process.env.MONGOLOCAL, (error,db) =>{
+        const database = db.db(process.env.DATABASE)
+
+        if (error) {
+            console.log("Error en la conexion");
+        } else {
+            const id = req.params.id;
+            const ObjectId = mongodb.ObjectId
+
+            database.collection("userStrangerThings").deleteOne({_id: ObjectId(id)}, (error, result) => {
+                if (error) {
+                    console.log("Error en la conexion");
+                } else {
+                    console.log("Documento eliminado");
+                    // res.json(result);
+                    res.redirect("/")
+                }
             })
 
         }
