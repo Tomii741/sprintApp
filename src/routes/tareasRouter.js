@@ -19,7 +19,7 @@ router.get("/", home);
 router.get("/creadores", creadores);
 router.get("/editar/:id", editar)
 router.post("/postSucces", datoGuardado);
-router.put("/update/:id", editPost)
+router.put("/actualizar/:id", editPost)
 router.delete("/eliminar/:id", eliminarUser)
 
 // router.post("/postSucces", datoGuardado);

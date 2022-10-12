@@ -120,10 +120,9 @@ export const editPost = (req, res) => {
             const { txtName, txtEstado, /*txtUrl ,*/ txtCharacter} = req.body;
 
             database.collection('userStrangerThings').findOne({_id: ObjectId(id)}, {$set: {txtName, txtEstado, /*txtUrl ,*/ txtCharacter}} ,(error, result) => {
-                error? console.log(error.message) :
-                database.collection('userStrangerThings').replaceOne({_id: ObjectId(id)},{txtName, txtEstado, /*txtUrl ,*/ txtCharacter}, )
+                error? console.log(error.message) : database.collection('userStrangerThings').replaceOne({_id: ObjectId(id)},{txtName, txtEstado, /*txtUrl ,*/ txtCharacter}, )
                 //console.log(req.body)
-                    res.redirect('postSucces')
+                res.redirect('/')
             })
 
         }
