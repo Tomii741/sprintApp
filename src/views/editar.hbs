@@ -1,3 +1,21 @@
+<header aria-label="Cabeçalho da página.">
+        <audio id="music" autoplay>
+            {{!-- <source src="/musics/normal-world.mpeg" aria-details="Audio do site" /> --}}
+        </audio>
+        <div class="header-content">
+            <img class="invert-element" src="/images/banner/logo-2.png"
+                alt="Imagem principal upside." />
+            <p class="invert-element" role="text">
+                Una Jornada para quien no le tiene miedo a lo desconocido. El camino para el Upside Down es incierto,
+                repleto de obstaculos
+                y peligros. Sin embargo, la recompensa es grande: Salvar Hawkings y el mundo de las garas de Vecna.
+                Estas Listo? Hace Click en el boton de abajo para entrar al Upside Down.
+            </p>
+            <button id="switch-theme-button" onclick="switchTheme()">Cambiar Mundos</button>
+        </div>
+
+        <div id="top-characters" class="world-characters"></div>
+</header>
 <main>
     <section id="section-form" class="container">
         <div data-aos="fade-zoom-in" data-aos-easing="ease-in-back"

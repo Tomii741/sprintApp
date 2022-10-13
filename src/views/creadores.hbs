@@ -1,21 +1,44 @@
+<header aria-label="Cabeçalho da página.">
+    <audio id="music" autoplay>
+        {{!-- <source src="/musics/normal-world.mpeg" aria-details="Audio do
+            site" /> --}}
+    </audio>
+    <div class="header-content">
+        <img class="invert-element" src="/images/banner/logo-2.png"
+            alt="Imagem principal upside." />
+        <p class="invert-element" role="text">
+            Una Jornada para quien no le tiene miedo a lo desconocido. El camino
+            para el Upside Down es incierto,
+            repleto de obstaculos
+            y peligros. Sin embargo, la recompensa es grande: Salvar Hawkings y
+            el mundo de las garas de Vecna.
+            Estas Listo? Hace Click en el boton de abajo para entrar al Upside
+            Down.
+        </p>
+        <button id="switch-theme-button" onclick="switchTheme()">Cambiar Mundos</button>
+    </div>
+
+    <div id="top-characters" class="world-characters"></div>
+</header>
 <main>
     <h2>Lista para Derrotar a Vecna</h2>
-    {{!-- {{#each result}}
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-            <div class="col-md-4">
-                <img src="#" class="img-fluid rounded-start" alt="foto de perfil">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">{{ txtName }}</h5>
-                    <p class="card-text">{{ txtCharacter }}.</p>
-                    <p class="card-text"><small class="text-muted">{{ txtEstado }}</small></p>
-                </div>
-            </div>
+    <div id="bottom-characters" class="world-characters"></div>
+
+    <section id="section-inverted-world" class="container">
+        <div class="section-texts" data-aos="fade-right">
+            <h2>El Upside Down</h2>
+            <p role="text">
+                El Upside Down parece una copia de nuestro Mundo, pero con
+                criaturas horrendas, tormentas asustadoras,
+                mucha obscuridad y entidades malignas. Un reino controlado por
+                Vecna, que tiene los planes de traer todo
+                esto a nuestro mundo.
+            </p>
         </div>
-    </div>
-    {{/each}} --}}
+
+        <img class="invert-element" src="/images/content/inverted-world.png"
+            alt="Image ilustrativa del Mundo Invertido" data-aos="fade-up"/>
+    </section>
     {{#each result}}
     <div class="card" style="width: 18rem;">
         <div class="card-body">
