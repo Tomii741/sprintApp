@@ -39,15 +39,38 @@
         <img class="invert-element" src="/images/content/inverted-world.png"
             alt="Image ilustrativa del Mundo Invertido" data-aos="fade-up"/>
     </section>
+    <div class="grid-cards-content">
     {{#each result}}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">{{ txtName }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ txtEstado}}</h6>
-            <p class="card-text">{{ txtCharacter}}.</p>
-            <a href="/editar/{{_id}}" class="card-link">Editar</a>
-            <a href="/eliminar/{{_id}}" class="card-link">Eliminar</a>
+        <div class="card-content">
+            <div class="card-wrapper">
+                <div class="card-img-content">
+                    <div class="card-img-wrapper">
+                        <img class="logo-png" src="/images/banner/logo-2.png" alt="">
+                    </div>
+                </div>
+
+                <div class="card-text-content">
+                    <div class="name-content">
+                        <h4 class="name-card" >{{ txtName }}</h4>
+                    </div>
+
+                    <p class="estado-card">
+                        {{ txtCharacter }}
+                    </p>
+                </div>
+
+                <div class="card-footer-content">
+                    <div class="card-wrapper-content">
+                        <h4>{{ txtEstado }}</h4>
+                    </div>
+
+                    <div class="links-setting">
+                        <a href="/editar/{{_id}}" class="card-link">Editar</a>
+                        <a href="/eliminar/{{_id}}" class="card-link">Eliminar</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     {{/each}}
+    </div>
 </main>
