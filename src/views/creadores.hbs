@@ -21,7 +21,6 @@
     <div id="top-characters" class="world-characters"></div>
 </header>
 <main>
-    <h2>Lista para Derrotar a Vecna</h2>
     <div id="bottom-characters" class="world-characters"></div>
 
     <section id="section-inverted-world" class="container">
@@ -39,12 +38,15 @@
         <img class="invert-element" src="/images/content/inverted-world.png"
             alt="Image ilustrativa del Mundo Invertido" data-aos="fade-up"/>
     </section>
+
+    <h2 data-aos="fade-right">Lista para Derrotar a Vecna</h2>
+
     <div class="grid-cards-content">
     {{#each result}}
-        <div class="card-content">
+        <div class="card-content" data-aos="fade-up">
             <div class="card-wrapper">
                 <div class="card-img-content">
-                    <div class="card-img-wrapper">
+                    <div class="card-img-wrapper  invert-element">
                         <img class="logo-png" src="/images/banner/logo-2.png" alt="">
                     </div>
                 </div>
