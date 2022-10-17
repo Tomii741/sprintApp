@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "dotenv": "^16.0.2",
@@ -13,7 +13,7 @@
   },
   "name": "stranger-things",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "repository": "https://github.com/Tomii741/stranger-things.git",
   "author": "Tomi <tombino1214@gmail.com>",
