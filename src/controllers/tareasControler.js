@@ -15,7 +15,7 @@ export const home = (req, res) => {
 
 
 export const datoGuardado = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error,db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error,db) =>{
         const database = db.db(process.env.DATABASE)
 
         if (error) {
@@ -38,7 +38,7 @@ export const datoGuardado = (req, res) => {
 }
 
 export const creadores = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error,db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error,db) =>{
         const database = db.db(process.env.DATABASE)
 
         if (error) {
@@ -59,7 +59,7 @@ export const creadores = (req, res) => {
 }
 
 export const editar = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db(process.env.DATABASE)
         if (error) {
             console.log(`No estamos conectados a la Database`);
@@ -70,7 +70,7 @@ export const editar = (req, res) => {
             let id = req.params.id;
 
             database.collection('userStrangerThings').findOne({_id: ObjectId(id)}, (error, result) =>{
-                if (error) {
+                if (error) { 
                     throw error;
                 }else{
                     res.render('editar', { 
@@ -83,8 +83,9 @@ export const editar = (req, res) => {
 }
 
 export const editPost = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
-        const database = db.db("stranger-thigns");
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
+        // const database = db.db("stranger-thigns");
+        const database = db.db(process.env.DATABASE);
         if (error) {
             console.log(`No estamos conectados a la Database`);
         }else{
@@ -108,7 +109,7 @@ export const editPost = (req, res) => {
 }
 
 export const eliminarUser = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db(process.env.DATABASE)
         if (error) {
             console.log(`No estamos conectados a la Database`);
@@ -133,7 +134,7 @@ export const eliminarUser = (req, res) => {
 
 
 export const eliminado = (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error,db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error,db) =>{
         const database = db.db(process.env.DATABASE)
 
         if (error) {
